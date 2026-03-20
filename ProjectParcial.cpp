@@ -44,7 +44,7 @@ public:
     Torre getTorre(int i) { return torres[i]; }
     void mostrar() {
         cout << "  [ Torres: ";
-        for(int i=0; i<cantidad; i++) cout << torres[i].nombre << "(P:" << torres[i].posicion << ") ";
+        for(int i=0; i<cantidad; i++) cout << torres[i].nombre << "(Posicion:" << torres[i].posicion << ") ";
         cout << "]" << endl;
     }
 };
@@ -112,7 +112,7 @@ public:
         Enemigo* actual = primero;
         cout << "  [ Enemigos: ";
         while (actual != NULL) {
-            cout << "E" << actual->id << "(P:" << actual->posicion << " HP:" << actual->vida << ") ";
+            cout << "Enemigo" << actual->id << "(Posicion:" << actual->posicion << " HP:" << actual->vida << ") ";
             actual = actual->sig;
         }
         cout << "]" << endl;
@@ -162,11 +162,11 @@ int main() {
     do {
         mostrarHUD(vidas, (oleadaActual ? oleadaActual->idOleada : 0), misTorres, misEnemigos);
         
-        cout << "\n1. Torre Arquero (P:3)\n2. Torre Canon (P:8)\n3. Siguiente Oleada\n4. AVANZAR TURNO\n5. Salir\nOpcion: ";
+        cout << "\n1. Torre Arquero (Posicion:3)\n2. Torre Canion (Posicion:8)\n3. Siguiente Oleada\n4. AVANZAR TURNO\n5. Salir\nOpcion: ";
         cin >> opcion;
 
         if (opcion == 1) misTorres.insertar({1, "Arquero", 3, 20, 2});
-        else if (opcion == 2) misTorres.insertar({2, "Canon", 8, 35, 3});
+        else if (opcion == 2) misTorres.insertar({2, "Canion", 8, 35, 3});
         else if (opcion == 3) {
             oleadaActual = misOleadas.siguiente(oleadaActual);
             if (oleadaActual != NULL) {

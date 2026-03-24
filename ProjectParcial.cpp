@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// --- ESTRUCTURAS ---
+// estructuras con atributos
 struct Torre {
     int id;
     string nombre;
@@ -28,7 +28,7 @@ struct Oleada {
     Oleada* sig;
 };
 
-// --- 1. LISTA SECUENCIAL (TORRES) ---
+// lista secuancial para torres
 class ListaTorres {
     Torre* torres;
     int capacidad;
@@ -49,7 +49,7 @@ public:
     }
 };
 
-// --- 2. LISTA DOBLE (ENEMIGOS) ---
+//lista doble enlazada para los enemigos
 class ListaEnemigos {
     Enemigo *primero, *ultimo;
 public:
@@ -119,7 +119,7 @@ public:
     }
 };
 
-// --- 3. LISTA CIRCULAR (OLEADAS) ---
+//lista circular de oleadas de enemigos
 class ListaOleadas {
     Oleada* ultimo;
 public:
@@ -137,7 +137,6 @@ public:
     }
 };
 
-// --- FUNCION DE INTERFAZ (CORREGIDA SIN TO_STRING) ---
 void mostrarHUD(int vidas, int oleadaID, ListaTorres &t, ListaEnemigos &e) {
     cout << "\n====================================================" << endl;
     cout << "   VIDAS JUGADOR: " << vidas << " | OLEADA ACTUAL: ";
